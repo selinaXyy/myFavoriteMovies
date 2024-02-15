@@ -8,7 +8,7 @@ The application seamlessly integrates with a PostgreSQL database, facilitating e
 ### Features 
 • Automated Movie Details: Fetches movie poster images and release years from the OMDb API.                    
 • User-Friendly Interface: Record and manage your favorite movies with ease.                                  
-• Detailed Reviews: Add ratings and personalized reviews for a richer movie journaling experience.
+• Detailed Reviews: Add ratings and personalized reviews for a richer movie journaling experience.          
 • Sort Functionality: Sort entries by rating or recency, providing flexibility and control over your movie journal.
 
 # Getting Started
