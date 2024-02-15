@@ -13,9 +13,9 @@ The application seamlessly integrates with a PostgreSQL database, facilitating e
 # Getting Started
 Ensure you have the following prerequisites installed on your device:
 
-Node.js
-NPM (Node Package Manager)
-PostgreSQL
+Node.js        
+NPM (Node Package Manager)          
+PostgreSQL            
 
 
 ## Installation
