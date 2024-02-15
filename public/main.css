@@ -1,0 +1,144 @@
+body{
+    background-color: #65666f;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+/* header */
+#sortForm, #goBtn, #mainHeading, #addBtnContainer{
+    display:inline-block;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    margin-top: 1.5rem;
+}
+
+#mainHeading{
+    font-family: "Caveat",cursive;
+    font-size: 80px;
+    text-shadow: 3px 0  7px rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+}
+
+#sortForm{
+    width:20%;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+#mainHeading{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#addBtnContainer{
+    width:20%;
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+#addBtn{
+    width:8rem;
+    height:3rem;
+    border-radius: 12px;
+    font-size: 18px;
+    background-color: rgba(255,255,255,80%);
+    border-color: #6d75ad;
+}
+
+#sortOptions,#goBtn{
+    height:2.5rem;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,70%);
+    border-color: #6d75ad;
+}
+
+/* movie reviews */
+.movieReviews{
+    margin-top: 1.5rem;
+    display:flex;
+    justify-content: space-around;
+}
+
+.reviews, .posterImgContainer{
+    display:inline-block;
+}
+
+.posterImgContainer{
+    width:40%;
+}
+
+.posterImg{
+    height:400px;
+    width: 280px;
+    border-radius: 15px;
+    margin-left:5rem;
+}
+
+.reviews{
+    width:50%;
+}
+
+.movieTitle{
+    font-size: 43px;
+}
+
+.reviews svg{
+    color:#FFFC9B;
+}
+
+.publishedYear{
+    margin-top:1rem;
+    margin-bottom: 0;
+    color: #24272d;
+}
+
+.reviewContent{
+    margin-top: 1rem;
+    color:#2e3338;;
+    font-size: 18px;
+    line-height: 1.7rem;
+}
+
+.modify{
+    margin-top: 2rem;
+}
+
+.modify form{
+    text-align: right;
+}
+
+.editBtn, .deleteBtn{
+    display: inline-block;
+}
+
+.editBtn>svg{
+    color:aliceblue;
+}
+
+.deleteBtn>svg{
+    color:rgb(209, 1, 1);
+    margin-left:3rem;
+}
+
+hr{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* first entry */
+.create{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.create, .create #addBtnContainer{
+    width:100%;
+    text-align: center;
+}
+
+.create #addBtn{
+    box-shadow: 0 0 15px aliceblue;
+}
