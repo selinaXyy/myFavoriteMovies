@@ -6,8 +6,8 @@ The Movie Journal App is a user-friendly program that allows users to record the
 The application seamlessly integrates with a PostgreSQL database, facilitating efficient storage, updating, deleting, and retrieval of recorded movie data.
 
 ### Features 
-• Automated Movie Details: Fetches movie poster images and release years from the OMDb API.
-• User-Friendly Interface: Record and manage your favorite movies with ease.
+• Automated Movie Details: Fetches movie poster images and release years from the OMDb API.                    
+• User-Friendly Interface: Record and manage your favorite movies with ease.                                  
 • Detailed Reviews: Add ratings and personalized reviews for a richer movie journaling experience.
 
 # Getting Started
