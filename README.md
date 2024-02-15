@@ -21,7 +21,7 @@ PostgreSQL
 ## Installation
 Run the following terminal commands to set up the program:
 
-npm init
+npm init                                    
 npm i express body-parser axios pg ejs
 
 ## Usage
