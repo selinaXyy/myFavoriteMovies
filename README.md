@@ -20,7 +20,7 @@ PostgreSQL
 
 
 ## Installation
-Run the following terminal commands to set up the program:
+Run the following terminal command to set up the program:
 
 npm install
 
