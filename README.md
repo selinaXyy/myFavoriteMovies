@@ -19,15 +19,15 @@ NPM (Node Package Manager)
 PostgreSQL            
 
 
-## Installation
-Run the following terminal command to set up the program:
-
-npm install
-
 ## Usage
 1. Clone the repository to your local machine.
 2. Navigate to the project directory.
+   
+### _Installation (Run the following terminal command to set up the program):_
+npm install 
+
 3. Run the application using 'node index.js' command.
+4. Open your web browser and go to http://localhost:3000 to view the application.
 
 Now you're ready to start recording your favorite movies and sharing your movie-watching experiences!
 
