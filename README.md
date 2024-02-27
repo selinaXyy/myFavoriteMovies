@@ -22,8 +22,7 @@ PostgreSQL
 ## Installation
 Run the following terminal commands to set up the program:
 
-npm init                                    
-npm i
+npm install
 
 ## Usage
 1. Clone the repository to your local machine.
