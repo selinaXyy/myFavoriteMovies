@@ -149,7 +149,7 @@ app.post("/update", async (req,res)=>{
     }
     catch(err){
         console.log(err);
-        res.status(500).send("API Request Error");
+        res.status(500).send("Database Query Error");
     }
 });
 
