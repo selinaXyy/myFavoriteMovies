@@ -5,7 +5,7 @@ import pg from "pg";
 
 const db = new pg.Client({
     user:"postgres", //substitude to your PostgreSQL username
-    password:"123456", //substitude to your PostgreSQL password
+    password:"1234567", //substitude to your PostgreSQL password
     host:"localhost", //this program is hosted on localhost port 3000
     database:"movies", //after this command, go to 'database.sql' file for setting up your database
     port: 5432 //substitude to your PostgreSQL port number
@@ -27,7 +27,7 @@ async function getMoviesbyRating() {
 }
 
 async function getMoviesbyRecency() {
-    const result = await db.query("SELECT * FROM mymovies ORDER BY id DESC"); //returns data sorted by id
+    const result = await db.query("SELECT * FROM mymovies ORDER BY year DESC"); //returns data sorted by published year
     const movies = result.rows;
 
     return movies;
@@ -59,8 +59,29 @@ app.get("/add",(req,res)=>{
     res.render("addNew.ejs");
 });
 
+app.get("/edit/:movieId", async (req,res)=>{
+    const editMovieId = req.params.movieId;
+
+    try{
+        const editMovieTitle = await db.query("SELECT title FROM mymovies WHERE id=$1",[editMovieId]);
+        const editMovieRating = await db.query("SELECT rating FROM mymovies WHERE id=$1",[editMovieId]);
+        const editMovieReview = await db.query("SELECT description FROM mymovies WHERE id=$1",[editMovieId]);
+
+        res.render("edit.ejs",{
+            movieId: editMovieId,
+            movieTitle: editMovieTitle.rows[0].title,
+            movieRating: editMovieRating.rows[0].rating,
+            movieReview: editMovieReview.rows[0].description,
+        });
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).send("Database Query Error");
+    }
+});
+
 //POST request
-app.post("/",async (req,res)=>{
+app.post("/add",async (req,res)=>{
     const movieTitle = req.body.title;
     const movieRating = req.body.rating;
     const reviewContent = req.body.content;
@@ -102,6 +123,7 @@ app.post("/sort", async (req,res)=>{
 
         res.render("index.ejs",{
             movies: movies,
+            sort: "sortByRecency"
         });
     }
     else{
@@ -110,32 +132,12 @@ app.post("/sort", async (req,res)=>{
 
         res.render("index.ejs",{
             movies: movies,
+            sort: "sortByRating"
         });
     }
 });
 
 app.post("/edit", async (req,res)=>{
-    const editMovieId = req.body.movieId;
-
-    try{
-        const editMovieTitle = await db.query("SELECT title FROM mymovies WHERE id=$1",[editMovieId]);
-        const editMovieRating = await db.query("SELECT rating FROM mymovies WHERE id=$1",[editMovieId]);
-        const editMovieReview = await db.query("SELECT description FROM mymovies WHERE id=$1",[editMovieId]);
-
-        res.render("edit.ejs",{
-            movieId: editMovieId,
-            movieTitle: editMovieTitle.rows[0].title,
-            movieRating: editMovieRating.rows[0].rating,
-            movieReview: editMovieReview.rows[0].description,
-        });
-    }
-    catch(err){
-        console.log(err);
-        res.status(500).send("Database Query Error");
-    }
-});
-
-app.post("/update", async (req,res)=>{
     const updateMovieId = req.body.movieId;
     const updatedRating = req.body.rating;
     const updatedContent = req.body.content;
